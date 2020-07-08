@@ -1,0 +1,12 @@
+version: '2.2'
+services:
+  myappl:
+    build:
+      context: ${CONF_PATH}
+      args:
+        - VERSION=${DOCKER_TAG}
+        - CONF_FOLDER=${CONF_FOLDER}
+    expose:
+      - 8080
+    cap_add:
+      - DAC_READ_SEARCH
